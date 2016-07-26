@@ -2023,6 +2023,7 @@ HAVE_LIST="
     section_data_rel_ro
     texi2html
     threads
+    vaapi_android
     vaapi_drm
     vaapi_x11
     vdpau_x11
@@ -5962,6 +5963,9 @@ enabled vaapi &&
 enabled vaapi &&
     check_code cc "va/va.h" "vaCreateSurfaces(0, 0, 0, 0, 0, 0, 0, 0)" ||
     disable vaapi
+
+enabled vaapi_android
+	enable vaapi
 
 if enabled vaapi ; then
     enabled xlib &&
