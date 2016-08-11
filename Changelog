@@ -1,6 +1,101 @@
 Entries are sorted chronologically from oldest to youngest within each release,
 releases are sorted from youngest to oldest.
 
+version <next>:
+
+
+version 3.1.2:
+- cmdutils: remove the current working directory from the DLL search path on win32
+- avcodec/rawdec: Fix palette handling with changing palettes
+- avcodec/raw: Fix decoding of ilacetest.mov
+- avformat/mov: Enable mp3 parsing if a packet needs it
+- avformat/hls: Use an array instead of stream offset for stream mapping
+- avformat/hls: Sync starting segment across variants on live streams
+- avformat/hls: Fix regression with ranged media segments
+- avcodec/ffv1enc: Fix assertion failure with non zero bits per sample
+- avfilter/af_hdcd: small fix in af_hdcd.c where gain was not being adjusted for "attenuate slowly"
+- avformat/oggdec: Fix integer overflow with invalid pts
+- ffplay: Fix invalid array index
+- avcodec/alacenc: allocate bigger packets (cherry picked from commit 82b84c71b009884c8d041361027718b19922c76d)
+- libavcodec/dnxhd: Enable 12-bit DNxHR support.
+- lavc/vaapi_encode_h26x: Fix a crash if "." is not the decimal separator.
+- jni: Return ENOSYS on unsupported platforms
+- lavu/hwcontext_vaapi: Fix compilation if VA_FOURCC_ABGR is not defined.
+- avcodec/vp9_parser: Check the input frame sizes for being consistent
+- avformat/flvdec: parse keyframe before a\v stream was created add_keyframes_index() when stream created or keyframe parsed
+- avformat/flvdec: splitting add_keyframes_index() out from parse_keyframes_index()
+- libavformat/rtpdec_asf: zero initialize the AVIOContext struct
+- libavutil/opt: Small bugfix in example.
+- libx264: Increase x264 opts character limit to 4096
+- avcodec/h264_parser: Set sps/pps_ref
+- librtmp: Avoid an infiniloop setting connection arguments
+- avformat/oggparsevp8: fix pts calculation on pages ending with an invisible frame
+- lavc/Makefile: Fix standalone compilation of the svq3 decoder.
+- lavf/vplayerdec: Improve auto-detection.
+- lavc/mediacodecdec_h264: properly convert extradata to annex-b
+- Revert "configure: Enable GCC vectorization on ≥4.9 on x86"
+
+version 3.1.1:
+- doc/APIchanges: document the lavu/lavf field moves
+- avformat/avformat: Move new field to the end of AVStream
+- avformat/utils: update deprecated AVStream->codec when the context is updated
+- avutil/frame: Move new field to the end of AVFrame
+- libavcodec/exr : fix decoding piz float file.
+- avformat/mov: Check sample size
+- lavfi: Move new field to the end of AVFilterContext
+- lavfi: Move new field to the end of AVFilterLink
+- ffplay: Fix usage of private lavfi API
+- lavc/mediacodecdec_h264: add missing NAL headers to SPS/PPS buffers
+- lavc/pnm_parser: disable parsing for text based PNMs
+
+
+version 3.1:
+- DXVA2-accelerated HEVC Main10 decoding
+- fieldhint filter
+- loop video filter and aloop audio filter
+- Bob Weaver deinterlacing filter
+- firequalizer filter
+- datascope filter
+- bench and abench filters
+- ciescope filter
+- protocol blacklisting API
+- MediaCodec H264 decoding
+- VC-2 HQ RTP payload format (draft v1) depacketizer and packetizer
+- VP9 RTP payload format (draft v2) packetizer
+- AudioToolbox audio decoders
+- AudioToolbox audio encoders
+- coreimage filter (GPU based image filtering on OSX)
+- libdcadec removed
+- bitstream filter for extracting DTS core
+- ADPCM IMA DAT4 decoder
+- musx demuxer
+- aix demuxer
+- remap filter
+- hash and framehash muxers
+- colorspace filter
+- hdcd filter
+- readvitc filter
+- VAAPI-accelerated format conversion and scaling
+- libnpp/CUDA-accelerated format conversion and scaling
+- Duck TrueMotion 2.0 Real Time decoder
+- Wideband Single-bit Data (WSD) demuxer
+- VAAPI-accelerated H.264/HEVC/MJPEG encoding
+- DTS Express (LBR) decoder
+- Generic OpenMAX IL encoder with support for Raspberry Pi
+- IFF ANIM demuxer & decoder
+- Direct Stream Transfer (DST) decoder
+- loudnorm filter
+- MTAF demuxer and decoder
+- MagicYUV decoder
+- OpenExr improvements (tile data and B44/B44A support)
+- BitJazz SheerVideo decoder
+- CUDA CUVID H264/HEVC decoder
+- 10-bit depth support in native utvideo decoder
+- libutvideo wrapper removed
+- YUY2 Lossless Codec decoder
+- VideoToolbox H.264 encoder
+
+
 version 3.0:
 - Common Encryption (CENC) MP4 encoding and decoding support
 - DXV decoding
